@@ -329,6 +329,13 @@ Twinkle.tag.updateSortOrder = function(e) {
 			checkbox.checked = true;
 		}
 		switch (tag) {
+			case 'Copypaste':
+				checkbox.subgroup = {
+					name: 'copypaste',
+					type: 'input',
+					label: wgULS('来源地址（选填）：', '來源地址（選填）：')
+				};
+				break;
 			case 'Expand language':
 				checkbox.subgroup = {
 					name: 'expandLanguage',
@@ -1298,6 +1305,11 @@ Twinkle.tag.callbacks = {
 				currentTag += '{{' + tagName;
 				// fill in other parameters, based on the tag
 				switch (tagName) {
+					case 'Copypaste':
+						if (params.tagParameters.copypaste) {
+							currentTag += '|url=' + params.tagParameters.copypaste;
+						}
+						break;
 					case 'Expand language':
 						if (params.tagParameters.expandLanguage) {
 							currentTag += '|1=' + params.tagParameters.expandLanguage;
