@@ -329,7 +329,7 @@ Twinkle.tag.updateSortOrder = function(e) {
 					{
 						name: 'expandLanguage',
 						type: 'input',
-						label: wgULS('外语版本语言代码（必填）：', '外語版本語言代碼（必填）：')
+						label: wgULS('外语版本语言代码（选填）：', '外語版本語言代碼（选填）：')
 					},
 					{
 						type: 'checkbox',
@@ -1291,7 +1291,9 @@ Twinkle.tag.callbacks = {
 				// fill in other parameters, based on the tag
 				switch (tagName) {
 					case 'Expand language':
-						currentTag += '|1=' + params.expandLanguage;
+						if (params.expandLanguage) {
+							currentTag += '|1=' + params.expandLanguage;
+						}
 						if (params.highQualityArticle) {
 							currentTag += '|status=yes';
 						}
