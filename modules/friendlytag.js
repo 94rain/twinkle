@@ -1755,9 +1755,6 @@ Twinkle.tag.callback.evaluate = function friendlytagCallbackEvaluate(e) {
 				}
 			}
 
-			if (checkParameter('Expand language', 'expandLanguage', wgULS('语言代码', '語言代碼'))) {
-				return;
-			}
 			if (checkParameter('Missing information', 'missingInformation', wgULS('缺少的内容', '缺少的內容'))) {
 				return;
 			}
